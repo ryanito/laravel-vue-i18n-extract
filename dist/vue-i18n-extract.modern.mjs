@@ -126,7 +126,7 @@ function* getMatches(file, regExp, captureGroup = 1) {
 
 
 function extractMethodMatches(file) {
-  const methodRegExp = /(?:[$\s.:"'`+\(\[\{]t[cm]?)\(\s*?(["'`])((?:[^\\]|\\.)*?)\1/g;
+  const methodRegExp = /(?:[$\s.:"'`+\(\[\{]t(?:[cm]|(?:Choice))?|trans|wTrans|transChoice|wTransChoice)\(\s*?(["'`])((?:[^\\]|\\.)*?)\1/g;
   return [...getMatches(file, methodRegExp, 2)];
 }
 
